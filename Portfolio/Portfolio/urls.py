@@ -20,6 +20,12 @@ from my_app import views
 
 urlpatterns = [
     path('admin/', admin.site.urls),
-    path('',views.home, name= 'name')
-    
+    path('',views.home, name= 'name'),
+    path('login/', views.login, name='login'),
 ]
+
+
+# def home(request):
+#     hero_content = views.hero(request)
+#     otra_vista_content = views.otra_vista(request)
+#     return render(request, 'home.html', {'hero_content': hero_content, 'otra_vista_content': otra_vista_content})
