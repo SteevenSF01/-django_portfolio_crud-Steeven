@@ -31,6 +31,10 @@ INSTALLED_APPS = [
     'my_app',
     'hero_app',
     'services_app',
+    'about_app',
+    'portfolio_app',
+    'skills_app',
+    'testimonials_app',
 ]
 
 
