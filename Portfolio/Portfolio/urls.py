@@ -16,9 +16,15 @@ Including another URLconf
 """
 from django.contrib import admin
 from django.urls import path
+# views my app
 from my_app import views as my_app_views
+# views PORTFOLIO
 from portfolio_app import views as portfolio_views
+# view HERO
 from hero_app import views as hero_views
+# view ABOUT
+from about_app import views as about_views
+
 from django.conf import settings
 from django.conf.urls.static import static
 
@@ -26,6 +32,9 @@ urlpatterns = [
     path('admin/', admin.site.urls),
     path('',my_app_views.home, name= 'home'),
     path('settings/', my_app_views.settings, name='settings'),
+    
     path('settings/modify_hero/<int:id>', hero_views.modify_hero, name='modify-hero'),
-    path('portfolio_details/<int:id>', portfolio_views.portfolio_detail, name='details_portfolio')
+    path('about-modify/<int:id>', about_views.about_modify, name='modify_about'),
+    
+    path('portfolio_details/<int:id>', portfolio_views.portfolio_detail, name='details_portfolio'),
 ]+ static(settings.MEDIA_URL, document_root=settings.MEDIA_ROOT)
