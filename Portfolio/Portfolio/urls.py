@@ -16,12 +16,14 @@ Including another URLconf
 """
 from django.contrib import admin
 from django.urls import path
-from my_app import views
+from my_app import views as my_app_views
+from portfolio_app import views as portfolio_views
 from django.conf import settings
 from django.conf.urls.static import static
 
 urlpatterns = [
     path('admin/', admin.site.urls),
-    path('',views.home, name= 'home'),
-    path('settings/', views.settings, name='settings'),
+    path('',my_app_views.home, name= 'home'),
+    path('settings/', my_app_views.settings, name='settings'),
+    path('portfolio_details/<int:id>', portfolio_views.portfolio_detail, name='details_portfolio')
 ]+ static(settings.MEDIA_URL, document_root=settings.MEDIA_ROOT)
