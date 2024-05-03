@@ -1,4 +1,4 @@
-from django.shortcuts import render
+from django.shortcuts import render, redirect
 from hero_app import views
 from hero_app.models import HeroModel
 from about_app.models import Profile

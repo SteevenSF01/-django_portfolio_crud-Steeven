@@ -1,10 +1,10 @@
 from django import forms
-from hero_app.models import Hero
+from hero_app.models import HeroModel
 
 
 class HeroForm(forms.ModelForm):
     class Meta:
-        model = Hero
+        model = HeroModel
         fields = ['name', 'title']
 
         widgets = {

@@ -12,9 +12,10 @@
     </div>
 
     <div class="content" style="margin-left: 250px; padding: 20px;">
-        <!-- Aquí va el contenido principal de tu página -->
         <h1>Bienvenue dans settings</h1>
         <a href="{% url 'home' %}">Retour à l'accueil</a>
+        {% block secondary_content %}
+        {% endblock secondary_content %}
     </div>
 </body>
 {% endblock content %}

@@ -5,4 +5,3 @@ from django.db import models
 class HeroModel(models.Model):
     name = models.CharField(max_length=50)
     title = models.TextField()
-    

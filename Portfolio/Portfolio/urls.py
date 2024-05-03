@@ -18,6 +18,7 @@ from django.contrib import admin
 from django.urls import path
 from my_app import views as my_app_views
 from portfolio_app import views as portfolio_views
+from hero_app import views as hero_views
 from django.conf import settings
 from django.conf.urls.static import static
 
@@ -25,5 +26,6 @@ urlpatterns = [
     path('admin/', admin.site.urls),
     path('',my_app_views.home, name= 'home'),
     path('settings/', my_app_views.settings, name='settings'),
+    path('settings/modify_hero/<int:id>', hero_views.modify_hero, name='modify-hero'),
     path('portfolio_details/<int:id>', portfolio_views.portfolio_detail, name='details_portfolio')
 ]+ static(settings.MEDIA_URL, document_root=settings.MEDIA_ROOT)
