@@ -5,6 +5,7 @@ from about_app.models import Profile
 from skills_app.models import Skill
 from portfolio_app.models import PortfolioItem
 from services_app.models import Service
+from testimonials_app.models import Testimonial
 
 
 # Create your views here.
@@ -15,12 +16,14 @@ def home(request):
     skills = Skill.objects.all()
     portfolio = PortfolioItem.objects.all()
     services = Service.objects.all()
+    testimonials = Testimonial.objects.all()
     return render(request, 'index.html', {
         'hero': hero,
         'about': about,
         'skills' : skills,
         'portfolio' : portfolio,
         'services' : services,
+        'testimonials' : testimonials,
     })
 
 
