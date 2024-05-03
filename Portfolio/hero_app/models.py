@@ -2,6 +2,7 @@ from django.db import models
 
 # Create your models here.
 
-class Hero(models.Model):
+class HeroModel(models.Model):
     name = models.CharField(max_length=50)
     title = models.TextField()
+    
