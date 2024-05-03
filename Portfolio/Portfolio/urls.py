@@ -26,6 +26,8 @@ from hero_app import views as hero_views
 from about_app import views as about_views
 # view SKILLS
 from skills_app import views as skills_views
+# view SERVICES
+from services_app import views as services_views
 
 from django.conf import settings
 from django.conf.urls.static import static
@@ -38,6 +40,7 @@ urlpatterns = [
     path('settings/modify_hero/<int:id>', hero_views.modify_hero, name='modify-hero'),
     path('about-modify/<int:id>', about_views.about_modify, name='modify_about'),
     path('skills-modify/', skills_views.skills_modify, name='skills-modify'),
+    path('services-modify/', services_views.services_modify, name= 'services-modify'),
     
     path('portfolio_details/<int:id>', portfolio_views.portfolio_detail, name='details_portfolio'),
 ]+ static(settings.MEDIA_URL, document_root=settings.MEDIA_ROOT)
