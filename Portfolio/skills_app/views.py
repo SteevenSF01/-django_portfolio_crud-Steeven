@@ -1,16 +1,13 @@
 from django.shortcuts import render, redirect
+from skills_app.models import Skill
+from skills_app.forms import SkillFormSet
 
-# Create your views here.
-
-from .forms import SkillForm
-
-def create_skill(request):
+def skills_modify(request):
+    skills = Skill.objects.all()
+    formset = SkillFormSet(queryset=skills)
     if request.method == 'POST':
-        form = SkillForm(request.POST)
-        if form.is_valid():
-            form.save()
-            return redirect('settings/')
-    else:
-        form = SkillForm()
-    
-    return render(request, 'modify_skills.html', {'form': form})
+        formset = SkillFormSet(request.POST, queryset=skills)
+        if formset.is_valid():
+            formset.save()
+            return redirect('')
+    return render(request, 'skills_modify.html', {'formset': formset})

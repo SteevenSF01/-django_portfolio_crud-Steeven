@@ -11,4 +11,4 @@ class Profile(models.Model):
     age = models.IntegerField()
     degree = models.CharField(max_length=100)
     email = models.EmailField()
-    freelance = models.BooleanField()
+    freelance = models.BooleanField()   

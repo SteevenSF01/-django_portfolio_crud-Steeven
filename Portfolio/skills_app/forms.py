@@ -1,7 +1,10 @@
 from django import forms
+from django.forms import modelformset_factory
 from skills_app.models import Skill
 
-class skillsForm(forms.ModelForm):
+class SkillForm(forms.ModelForm):
     class Meta:
         model = Skill
-        field = ['name','proficiency']
+        fields = ['name', 'proficiency']
+
+SkillFormSet = modelformset_factory(Skill, form=SkillForm, extra=0)
