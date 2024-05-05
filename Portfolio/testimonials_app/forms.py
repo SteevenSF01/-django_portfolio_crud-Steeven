@@ -1,11 +1,13 @@
 from django import forms
 from testimonials_app.models import Testimonial
 
-
-class HeroForm(forms.ModelForm):
+class TestimonialForm(forms.ModelForm):
     class Meta:
         model = Testimonial
-        fields = ['content', 'client_name', 'client_position']
+        fields = ['content', 'client_name', 'client_position', 'image']
         widgets = {
-            'image' : forms.FileInput()
+            'image': forms.FileInput(attrs={'class': 'form-control-file'}),
         }
+
+
+

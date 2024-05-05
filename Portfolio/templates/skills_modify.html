@@ -1,5 +1,5 @@
-{% extends "base.html" %}
-{% block content %}
+{% extends "settings.html" %}
+{% block secondary_content %}
 <form method="post">
     {% csrf_token %}
     {{ formset.management_form }}
@@ -8,4 +8,4 @@
     {% endfor %}
     <button type="submit">Guardar cambios</button>
 </form>  
-{% endblock %}
+{% endblock secondary_content %}

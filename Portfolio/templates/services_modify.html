@@ -1,13 +1,12 @@
-{% extends "base.html" %}
-{% block content %}
+{% extends "settings.html" %}
+{% block secondary_content %}
 <form method="post" style="margin: 20px auto; width: 80%;">
     {% csrf_token %}
     {{ formset.management_form }}
     {% for form in formset %}
         <div style="margin-bottom: 20px;">
-            {{ form.as_p }} <!-- Esto renderiza el formulario como párrafos -->
-        </div>
+            {{ form.as_p }}
     {% endfor %}
     <button type="submit" style="background-color: #007bff; color: #fff; padding: 10px 20px; border: none; border-radius: 5px; cursor: pointer;">Save</button>
 </form>  
-{% endblock %}
+{% endblock secondary_content %}

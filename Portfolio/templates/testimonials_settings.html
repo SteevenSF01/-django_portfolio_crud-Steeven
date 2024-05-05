@@ -1,0 +1,22 @@
+{% extends "settings.html" %}
+{% load static %}
+{% block secondary_content %}
+<h1 class='display-4 text-center mt-5 fw-semibold'>Testimonials Settings</h1>
+<section class="testimonial-container container gap-4 " style="display: flex; flex-wrap: wrap; justify-secondary_content: space-between;">
+    {% for t in testimonials %}
+    <div class="testimonial-item" data-aos="fade-up" style="width: calc(33.33% - 20px); margin-bottom: 20px; background-color: #f9f9f9; padding: 20px; box-shadow: 0 4px 8px rgba(0, 0, 0, 0.1); border-radius: 10px;">
+        <p class="text-center">
+            <i class="bx bxs-quote-alt-left quote-icon-left"></i>
+            {{ t.content }}
+            <i class="bx bxs-quote-alt-right quote-icon-right"></i>
+        </p>
+        <div class="text-center">
+            <img src="{% static t.image %}" class="testimonial-img img-fluid rounded-circle" alt="" style="width: 100px; height: 100px; margin-bottom: 15px;">
+        </div>
+        <h3 class="text-center">{{ t.client_name }}</h3>
+        <h4 class="text-center">{{ t.client_position }}</h4>
+        <button class="btn btn-primary"><a href="{% url "testimonial_modify" t.id %}" class='text-decoration-none text-white'>Modify</a></button>
+    </div>
+    {% endfor %}
+</section>
+{% endblock secondary_content %}
