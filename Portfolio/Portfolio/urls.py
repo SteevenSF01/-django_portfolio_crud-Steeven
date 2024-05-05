@@ -40,10 +40,10 @@ urlpatterns = [
     path('settings/', my_app_views.settings, name='settings'),
     
     path('settings/modify_hero/<int:id>', hero_views.modify_hero, name='modify-hero'),
-    path('about-modify/<int:id>', about_views.about_modify, name='modify_about'),
-    path('skills-modify/', skills_views.skills_modify, name='skills-modify'),
-    path('services-modify/', services_views.services_modify, name= 'services-modify'),
-    path('testimonials_settings/', testimonials_views.testimonial_settings, name='testimonial_settings'),
+    path('settings/about-modify/<int:id>', about_views.about_modify, name='modify_about'),
+    path('settings/skills-modify/', skills_views.skills_modify, name='skills-modify'),
+    path('settings/services-modify/', services_views.services_modify, name= 'services-modify'),
+    path('settings/testimonials_settings/', testimonials_views.testimonial_settings, name='testimonial_settings'),
     path('testimonials_settings/modify/<int:id>', testimonials_views.testimonial_modify, name='testimonial_modify'),
     
     path('portfolio_details/<int:id>', portfolio_views.portfolio_detail, name='details_portfolio'),

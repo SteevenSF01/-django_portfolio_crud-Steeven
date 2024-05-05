@@ -2,13 +2,13 @@
 {% block content %}
 <body>
     <div class="sidebar d-flex  flex-column justify-content-center gap-4 px-4  " style="position: fixed; left: 0; top: 0; height: 100%; width: 250px; background-color: #040B14ff; padding-top: 20px;">
-        <a class='text-decoration-none text-white  ' style='font-size: 21px;' href="#hero">Hero</a>
-        <a class='text-decoration-none text-white  ' style='font-size: 21px;' href="#about">About</a>
-        <a class='text-decoration-none text-white  ' style='font-size: 21px;' href="#skills">Skills</a>
+        <a class='text-decoration-none text-white  ' style='font-size: 21px;' href="{% url "modify-hero" 1 %}">Hero</a>
+        <a class='text-decoration-none text-white  ' style='font-size: 21px;' href="{% url "modify_about" 1 %}">About</a>
+        <a class='text-decoration-none text-white  ' style='font-size: 21px;' href="{% url "skills-modify" %}">Skills</a>
         <a class='text-decoration-none text-white  ' style='font-size: 21px;' href="#portfolio">Portfolio</a>
-        <a class='text-decoration-none text-white  ' style='font-size: 21px;' href="#services">Services</a>
-        <a class='text-decoration-none text-white  ' style='font-size: 21px;' href="#testimonials">Testimonials</a>
-        <a class='text-decoration-none text-white  ' style='font-size: 21px;' href="#contact">Contact</a>
+        <a class='text-decoration-none text-white  ' style='font-size: 21px;' href="{% url "services-modify" %}">Services</a>
+        <a class='text-decoration-none text-white  ' style='font-size: 21px;' href="{% url "testimonial_settings" %}">Testimonials</a>
+        <a class='text-decoration-none text-white  ' style='font-size: 21px;' href="#contact"><a href="{% url "home" %}">Exit</a></a>
     </div>
 
     <div class="content" style="margin-left: 250px; padding: 20px;">
