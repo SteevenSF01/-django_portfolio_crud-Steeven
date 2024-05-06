@@ -29,6 +29,8 @@ def home(request):
 
 def settings(request):
     hero = HeroModel.objects.all()
+    about = Profile.objects.all()
     return render(request, 'settings.html', {
         'hero': hero,
+        'about' : about
     })

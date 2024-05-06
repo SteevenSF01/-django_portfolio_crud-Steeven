@@ -1,12 +1,17 @@
 from django.shortcuts import render, redirect
 from services_app.models import Service
-from services_app.forms import servicesFormSet, serviceForm
+from services_app.forms import  serviceForm
+from hero_app.models import HeroModel
+from about_app.models import Profile
+
 
 # Create your views here.
 
 def services_settings(request):
     services = Service.objects.all()
-    return render(request, 'services_settings.html', {'services':services})
+    about = Profile.objects.all()
+    hero = HeroModel.objects.all()
+    return render(request, 'services_settings.html', {'services':services, 'hero':hero, 'about':about})
 
 def services_modify(request,id):
     services = Service.objects.get(id=id)

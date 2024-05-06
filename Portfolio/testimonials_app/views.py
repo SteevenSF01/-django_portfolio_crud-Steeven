@@ -1,11 +1,15 @@
 from django.shortcuts import render, redirect
 from testimonials_app.models import Testimonial
 from testimonials_app.forms import TestimonialForm
-from django.forms import formset_factory
+from hero_app.models import HeroModel
+from about_app.models import Profile
+
 
 def testimonial_settings(request):
     testimonials = Testimonial.objects.all()
-    return render(request, 'testimonials_settings.html', {'testimonials': testimonials})
+    about = Profile.objects.all()
+    hero = HeroModel.objects.all()
+    return render(request, 'testimonials_settings.html', {'testimonials': testimonials, 'hero':hero, 'about':about})
 
 def testimonial_modify(request,id):
     testimonial = Testimonial.objects.get(id=id)

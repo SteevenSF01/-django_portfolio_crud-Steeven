@@ -12,3 +12,4 @@ class Profile(models.Model):
     degree = models.CharField(max_length=100)
     email = models.EmailField()
     freelance = models.BooleanField()   
+    image = models.ImageField(upload_to='images/', default='images/default.png')

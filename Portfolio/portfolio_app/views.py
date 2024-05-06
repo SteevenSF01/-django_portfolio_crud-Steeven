@@ -1,6 +1,9 @@
 from django.shortcuts import render, redirect
 from portfolio_app.models import PortfolioItem
 from portfolio_app.forms import portfolioForm
+from hero_app.models import HeroModel
+from about_app.models import Profile
+
 
 # Create your views here.
 
@@ -10,7 +13,9 @@ def portfolio_detail(request, id):
 
 def portfolio_settings(request):
     portfolio = PortfolioItem.objects.all()
-    return render(request, 'portfolio_settings.html', {'portfolio':portfolio})
+    about = Profile.objects.all()
+    hero = HeroModel.objects.all()
+    return render(request, 'portfolio_settings.html', {'portfolio':portfolio ,'about': about, 'hero':hero})
 
 
 def portfolio_modify(request,id):

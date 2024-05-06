@@ -40,6 +40,7 @@ urlpatterns = [
     path('settings/', my_app_views.settings, name='settings'),
     # HERO
     path('settings/modify_hero/<int:id>', hero_views.modify_hero, name='modify-hero'),
+    # ABOUT
     path('settings/about-modify/<int:id>', about_views.about_modify, name='modify_about'),
     # SKILLS
     path('settings/skills-settings/', skills_views.skills_settings, name='skills-settings'),

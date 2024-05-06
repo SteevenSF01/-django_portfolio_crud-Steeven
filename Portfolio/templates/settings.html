@@ -8,7 +8,9 @@
 <header id="header">
     <div class="d-flex flex-column">
         <div class="profile">
-            <img src="{% static "/img/profile-img.jpg" %}" alt="" class="img-fluid rounded-circle"> {% comment "modifier l'image, pas l'image dans le 'HERO" %}{% endcomment %}
+            {% for x in about %}
+            <img src="{{x.image.url}}" alt="" class="img-fluid rounded-circle"> 
+            {% endfor %}
             {% for x in hero %}
             <h1 class="text-light"><a href="index.html">{{x.name}}</a></h1>
             {% endfor %}
@@ -28,7 +30,7 @@
                 <li><a href="{% url "portfolio_settings" %}" class="nav-link scrollto"><i class="bx bx-book-content"></i> <span>Portfolio</span></a></li>
                 <li><a href="{% url "services_settings" %}" class="nav-link scrollto"><i class="bx bx-server"></i> <span>Services</span></a></li>
                 <li><a href="{% url "testimonial_settings" %}" class="nav-link scrollto"><i class='bx bx-book-open'></i> <span>Testimonial</span></a></li>
-                <li><a href="{% url "home" %}" class="nav-link scrollto"><i class="bx bx-envelope"></i> <span>Exit</span></a></li>
+                <li><a href="{% url "home" %}" class="nav-link scrollto"><i class="bx bx-exit"></i> <span>Exit</span></a></li>
             </ul>
         </nav><!-- .nav-menu -->
     </div>

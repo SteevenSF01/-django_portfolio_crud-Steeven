@@ -16,7 +16,9 @@ class ProfileForm(forms.ModelForm):
             'degree',
             'email',
             'freelance',
+            'image',
         ]
         widget = {
-            'birthday' : forms.DateInput(attrs={'class': 'form-group', 'type':'date'})
+            'birthday' : forms.DateInput(attrs={'class': 'form-group', 'type':'date'}),
+            'images' : forms.FileInput()
         }
