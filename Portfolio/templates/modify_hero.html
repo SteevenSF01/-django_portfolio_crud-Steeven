@@ -3,8 +3,9 @@
 
 <body>
   <!-- ======= Hero Section ======= -->
-  <section
-    class="w-75 d-flex flex-column justify-content-center align-items-center my-4" style="border: 2px solid black;"
+  <section class="d-flex flex-column align-items-center">
+    <section
+    class="w-75 d-flex flex-column justify-content-center align-items-center my-4" style="border: 2px solid black; border-radius:10px"
   >
     <div class="hero-container" data-aos="fade-in">
       {% for x in heroall %}
@@ -16,7 +17,7 @@
   <!-- End Hero -->
 
   <h1>Modify Hero</h1>
-  <form method="POST" class=' border-4 p-3 d-flex justify-content-around flex-wrap' style="background: rgb(185, 184, 184); border-radius:20px; width:700px;" >
+  <form method="POST" class=' border-4 p-3 d-flex justify-content-around flex-wrap' style="background: rgb(185, 184, 184); border-radius:20px; width:750px;" >
     {% csrf_token %}
     <div class="form-group">
       <label for="id_name">Name:</label>
@@ -40,5 +41,7 @@
     </div>
     <input type="submit" value="Modify" class="btn btn-primary mt-4" />
   </form>
+  </section>
+
 </body>
 {% endblock secondary_content %}
