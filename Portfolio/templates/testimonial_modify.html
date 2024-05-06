@@ -1,7 +1,7 @@
 {% extends "settings.html" %}{% load static %}
 {% block secondary_content %}
 <body>
-    <h1>Modifier testimonials</h1>
+    <h1>Modify testimonials</h1>
     <form method='POST' enctype="multipart/form-data">
         {% csrf_token %}
         {{form}}

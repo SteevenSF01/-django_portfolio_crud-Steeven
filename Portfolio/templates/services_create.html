@@ -1,0 +1,13 @@
+{% extends "settings.html" %}{% load static %}
+{% block secondary_content %}
+<h2>Add a new services</h2>
+
+<form method="POST" class="border border-secondary p-4 rounded w-50" style="background-color: #f8f9fa;" >
+
+    {% csrf_token %}
+    {{ form.as_p}}
+    <button type="submit">Add Services</button>
+
+</form>
+{% endblock secondary_content %}
+

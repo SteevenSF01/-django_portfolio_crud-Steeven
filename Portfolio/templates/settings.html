@@ -26,8 +26,8 @@
                 <li><a href="{% url "modify_about" 1 %}" class="nav-link scrollto"><i class="bx bx-user"></i> <span>About</span></a></li>
                 <li><a href="{% url "skills-settings" %}" class="nav-link scrollto"><i class="bx bx-file-blank"></i> <span>Skills</span></a></li>
                 <li><a href="{% url "portfolio_settings" %}" class="nav-link scrollto"><i class="bx bx-book-content"></i> <span>Portfolio</span></a></li>
-                <li><a href="{% url "services-modify" %}" class="nav-link scrollto"><i class="bx bx-server"></i> <span>Services</span></a></li>
-                <li><a href="{% url "testimonial_settings" %}" class="nav-link scrollto"><i class='bx bx-cog'></i> <span>Testimonial</span></a></li>
+                <li><a href="{% url "services_settings" %}" class="nav-link scrollto"><i class="bx bx-server"></i> <span>Services</span></a></li>
+                <li><a href="{% url "testimonial_settings" %}" class="nav-link scrollto"><i class='bx bx-book-open'></i> <span>Testimonial</span></a></li>
                 <li><a href="{% url "home" %}" class="nav-link scrollto"><i class="bx bx-envelope"></i> <span>Exit</span></a></li>
             </ul>
         </nav><!-- .nav-menu -->
@@ -36,8 +36,8 @@
     
 <main id='main'>
     <div class="content" style=" padding: 20px;">
-        <h1>Bienvenue dans settings</h1>
-        <a href="{% url 'home' %}">Retour à l'accueil</a>
+        <h1>Settings</h1>
+        <a href="{% url 'home' %}" class='text-decoration-none'>Back home</a>
     </div>
     {% block secondary_content %}
     {% endblock secondary_content %}
