@@ -48,6 +48,8 @@ urlpatterns = [
     # TESTIMONIALS
     path('settings/testimonials_settings/', testimonials_views.testimonial_settings, name='testimonial_settings'),
     path('testimonials_settings/modify/<int:id>', testimonials_views.testimonial_modify, name='testimonial_modify'),
+    path('testimonials_settings/destroy/<int:id>', testimonials_views.delete_testimonial, name='testimonial_delete'),
+    path('testimonials_settings/create', testimonials_views.create_testimonial, name='testimonial_create'),
     # PORTFOLIO
     path('portfolio_details/<int:id>', portfolio_views.portfolio_detail, name='details_portfolio'),
     

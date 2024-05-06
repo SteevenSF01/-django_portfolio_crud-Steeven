@@ -14,3 +14,18 @@ def testimonial_modify(request,id):
         form.save()
         return redirect('testimonial_settings')
     return render(request, 'testimonial_modify.html', {'form': form})
+
+def delete_testimonial(request, id):
+    testimonial = Testimonial.objects.get(id=id)
+    testimonial.delete()
+    return redirect('/settings/testimonials_settings/')
+
+def create_testimonial(request):
+    if request.method == 'POST':
+        form = TestimonialForm(request.POST)
+        if form.is_valid():
+            form.save()
+            return redirect('/settings/testimonials_settings/')
+    else:
+        form = TestimonialForm() 
+    return render(request, 'testimonial_create.html',{'form':form})
