@@ -4,7 +4,7 @@ from django.db import models
 
 
 class Profile(models.Model):
-    birthday = models.TextField()
+    birthday = models.DateField()
     website = models.URLField()
     phone = models.CharField(max_length=20)
     city = models.CharField(max_length=100)

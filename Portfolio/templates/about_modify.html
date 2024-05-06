@@ -1,11 +1,45 @@
 {% extends "settings.html" %}
 {% block secondary_content %}
 <body>
-    <h1>Modifier about</h1>
-    <form method='POST'>
+    {% include "about.html" %}
+<div class="container">
+    <h1>Modify about</h1>
+    <form method="POST" class="border border-secondary p-4 rounded d-flex flex-column gap-3" style="background-color: #f8f9fa;">
         {% csrf_token %}
-        {{form}}
-        <input type="submit" value='modifier'>
+        <div class="form-group d-flex flex-column w-50">
+            <label for="id_birthday">Birthday:</label>
+            {{ form.birthday }}
+        </div>
+        <div class="form-group d-flex flex-column w-50">
+            <label for="id_website">Website:</label>
+            {{ form.website }}
+        </div>
+        <div class="form-group d-flex flex-column w-50">
+            <label for="id_phone">Phone:</label>
+            {{ form.phone }}
+        </div>
+        <div class="form-group d-flex flex-column w-50">
+            <label for="id_city">City:</label>
+            {{ form.city }}
+        </div>
+        <div class="form-group d-flex flex-column w-50">
+            <label for="id_age">Age:</label>
+            {{ form.age }}
+        </div>
+        <div class="form-group d-flex flex-column w-50">
+            <label for="id_degree">Degree:</label>
+            {{ form.degree }}
+        </div>
+        <div class="form-group d-flex flex-column w-50">
+            <label for="id_email">Email:</label>
+            {{ form.email }}
+        </div>
+        <div class="form-check">
+            {{ form.freelance }}
+            <label class="form-check-label" for="id_freelance">Freelance:</label>
+        </div>
+        <button type="submit" class="btn btn-primary mt-3">Modify</button>
     </form>
-</body>
+</div>
 {% endblock secondary_content %}
+

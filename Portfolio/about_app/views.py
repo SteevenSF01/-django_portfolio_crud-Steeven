@@ -6,9 +6,10 @@ from about_app.forms import ProfileForm
 # Create your views here.
 
 def about_modify(request,id):
-    about = Profile.objects.get(id=id)
-    form = ProfileForm(request.POST or None, instance = about)
+    aboutId = Profile.objects.get(id=id)
+    about = Profile.objects.all()
+    form = ProfileForm(request.POST or None, instance = aboutId)
     if form.is_valid():
         form.save()
-        return redirect('home')
-    return render(request, 'about_modify.html', {'form': form})
+        return redirect('/settings/about-modify/1')
+    return render(request, 'about_modify.html', {'form': form, 'about':about})

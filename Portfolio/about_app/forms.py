@@ -17,15 +17,6 @@ class ProfileForm(forms.ModelForm):
             'email',
             'freelance',
         ]
-
-    def __init__(self, *args, **kwargs):
-        super(ProfileForm, self).__init__(*args, **kwargs)
-
-        self.fields['birthday'].widget.attrs.update({'class': 'form-control'})
-        self.fields['website'].widget.attrs.update({'class': 'form-control'})
-        self.fields['phone'].widget.attrs.update({'class': 'form-control'})
-        self.fields['city'].widget.attrs.update({'class': 'form-control'})
-        self.fields['age'].widget.attrs.update({'class': 'form-control'})
-        self.fields['degree'].widget.attrs.update({'class': 'form-control'})
-        self.fields['email'].widget.attrs.update({'class': 'form-control'})
-        self.fields['freelance'].widget.attrs.update({'class': 'form-control'})
+        widget = {
+            'birthday' : forms.DateInput(attrs={'class': 'form-group', 'type':'date'})
+        }
