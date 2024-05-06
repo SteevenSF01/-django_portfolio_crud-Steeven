@@ -55,5 +55,9 @@ urlpatterns = [
     path('testimonials_settings/create', testimonials_views.create_testimonial, name='testimonial_create'),
     # PORTFOLIO
     path('portfolio_details/<int:id>', portfolio_views.portfolio_detail, name='details_portfolio'),
+    path('settings/portfolio', portfolio_views.portfolio_settings, name='portfolio_settings'),
+    path('settings/portfolio/destroy/<int:id>', portfolio_views.delete_portfolio, name='portfolio_delete'),
+    path('settings/portfolio/create', portfolio_views.create_portfolio, name='portfolio_create'),
+    path('settings/portfolio/<int:id>', portfolio_views.portfolio_modify, name='portfolio_modify'),
     
 ]+ static(settings.MEDIA_URL, document_root=settings.MEDIA_ROOT)

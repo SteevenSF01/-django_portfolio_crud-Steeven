@@ -1,0 +1,15 @@
+{% extends "settings.html" %}
+{% load static %} 
+
+{% block secondary_content %}
+<body>
+  <div class="container">
+    <h1>Create portfolio</h1>
+    <form method="POST" class="border border-secondary p-4 rounded" style="background-color: #f8f9fa;" enctype="multipart/form-data">
+      {% csrf_token %}
+      {{ form }}
+      <button type="submit" class="btn btn-success m-3">Create</button>
+    </form>
+  </div>
+</body>
+{% endblock secondary_content %}

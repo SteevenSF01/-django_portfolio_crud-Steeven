@@ -10,5 +10,5 @@ class PortfolioItem(models.Model):
     )
 
     title = models.CharField(max_length=100)
-    image = models.ImageField(upload_to='portfolio_images/')
+    image = models.ImageField(upload_to='images/')
     category = models.CharField(max_length=10, choices=choix_categorie)
