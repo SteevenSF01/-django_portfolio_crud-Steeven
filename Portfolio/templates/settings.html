@@ -1,21 +1,46 @@
 {% extends "base.html" %}
 {% block content %}
-<body>
-    <div class="sidebar d-flex  flex-column justify-content-center gap-4 px-4  " style="position: fixed; left: 0; top: 0; height: 100%; width: 250px; background-color: #040B14ff; padding-top: 20px;">
-        <a class='text-decoration-none text-white  ' style='font-size: 21px;' href="{% url "modify-hero" 1 %}">Hero</a>
-        <a class='text-decoration-none text-white  ' style='font-size: 21px;' href="{% url "modify_about" 1 %}">About</a>
-        <a class='text-decoration-none text-white  ' style='font-size: 21px;' href="{% url "skills-modify" %}">Skills</a>
-        <a class='text-decoration-none text-white  ' style='font-size: 21px;' href="#portfolio">Portfolio</a>
-        <a class='text-decoration-none text-white  ' style='font-size: 21px;' href="{% url "services-modify" %}">Services</a>
-        <a class='text-decoration-none text-white  ' style='font-size: 21px;' href="{% url "testimonial_settings" %}">Testimonials</a>
-        <a class='text-decoration-none text-white  ' style='font-size: 21px;' href="#contact"><a href="{% url "home" %}">Exit</a></a>
-    </div>
+{% load static %} 
+<body class='ps-5'>
+<!-- ======= Header ======= -->
+<i class="bi bi-list mobile-nav-toggle d-xl-none"></i>
 
-    <div class="content" style="margin-left: 250px; padding: 20px;">
+<header id="header">
+    <div class="d-flex flex-column">
+        <div class="profile">
+            <img src="{% static "/img/profile-img.jpg" %}" alt="" class="img-fluid rounded-circle"> {% comment "modifier l'image, pas l'image dans le 'HERO" %}{% endcomment %}
+            {% for x in hero %}
+            <h1 class="text-light"><a href="index.html">{{x.name}}</a></h1>
+            {% endfor %}
+            <div class="social-links mt-3 text-center">
+                <a href="#" class="twitter"><i class="bx bxl-twitter"></i></a>
+                <a href="#" class="facebook"><i class="bx bxl-facebook"></i></a>
+                <a href="#" class="instagram"><i class="bx bxl-instagram"></i></a>
+                <a href="#" class="google-plus"><i class="bx bxl-skype"></i></a>
+                <a href="#" class="linkedin"><i class="bx bxl-linkedin"></i></a>
+            </div>
+        </div>
+        <nav id="navbar" class="nav-menu navbar">
+            <ul>
+                <li><a href="{% url "modify-hero" 1 %}" class="nav-link scrollto active"><i class="bx bx-home"></i><span>Hero</span></a></li>
+                <li><a href="{% url "modify_about" 1 %}" class="nav-link scrollto"><i class="bx bx-user"></i> <span>About</span></a></li>
+                <li><a href="{% url "skills-modify" %}" class="nav-link scrollto"><i class="bx bx-file-blank"></i> <span>Skills</span></a></li>
+                <li><a href="#portfolio" class="nav-link scrollto"><i class="bx bx-book-content"></i> <span>Portfolio</span></a></li>
+                <li><a href="{% url "services-modify" %}" class="nav-link scrollto"><i class="bx bx-server"></i> <span>Services</span></a></li>
+                <li><a href="{% url "testimonial_settings" %}" class="nav-link scrollto"><i class='bx bx-cog'></i> <span>Testimonial</span></a></li>
+                <li><a href="{% url "home" %}" class="nav-link scrollto"><i class="bx bx-envelope"></i> <span>Exit</span></a></li>
+            </ul>
+        </nav><!-- .nav-menu -->
+    </div>
+</header><!-- End Header -->
+    
+<main id='main'>
+    <div class="content" style=" padding: 20px;">
         <h1>Bienvenue dans settings</h1>
         <a href="{% url 'home' %}">Retour à l'accueil</a>
-        {% block secondary_content %}
-        {% endblock secondary_content %}
     </div>
+    {% block secondary_content %}
+    {% endblock secondary_content %}
+</main>
 </body>
 {% endblock content %}

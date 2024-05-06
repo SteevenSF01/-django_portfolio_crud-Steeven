@@ -38,13 +38,17 @@ urlpatterns = [
     path('admin/', admin.site.urls),
     path('',my_app_views.home, name= 'home'),
     path('settings/', my_app_views.settings, name='settings'),
-    
+    # HERO
     path('settings/modify_hero/<int:id>', hero_views.modify_hero, name='modify-hero'),
     path('settings/about-modify/<int:id>', about_views.about_modify, name='modify_about'),
+    # SKILLS
     path('settings/skills-modify/', skills_views.skills_modify, name='skills-modify'),
+    # SERVICES
     path('settings/services-modify/', services_views.services_modify, name= 'services-modify'),
+    # TESTIMONIALS
     path('settings/testimonials_settings/', testimonials_views.testimonial_settings, name='testimonial_settings'),
     path('testimonials_settings/modify/<int:id>', testimonials_views.testimonial_modify, name='testimonial_modify'),
-    
+    # PORTFOLIO
     path('portfolio_details/<int:id>', portfolio_views.portfolio_detail, name='details_portfolio'),
+    
 ]+ static(settings.MEDIA_URL, document_root=settings.MEDIA_ROOT)
