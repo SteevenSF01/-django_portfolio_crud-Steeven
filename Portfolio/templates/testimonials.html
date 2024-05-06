@@ -16,7 +16,7 @@
                                 {{t.content}}                            
                             <i class="bx bxs-quote-alt-right quote-icon-right"></i>
                         </p>
-                        <img src="{% static t.image %}" class="testimonial-img" alt="">
+                        <img src="{{t.image.url}}" class="testimonial-img" alt="">
                         <h3>{{t.client_name}}</h3>
                         <h4>{{t.client_position}}</h4>
                     </div>

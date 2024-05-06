@@ -44,6 +44,8 @@ urlpatterns = [
     # SKILLS
     path('settings/skills-settings/', skills_views.skills_settings, name='skills-settings'),
     path('settings/skills-settings/modify/<int:id>', skills_views.skills_modify, name='skills-modify'),
+    path('settings/skills-settings/destroy/<int:id>', skills_views.delete_skill, name='skills-delete'),
+    path('settings/skills-settings/create', skills_views.create_skill, name='skills-create'),
     # SERVICES
     path('settings/services-modify/', services_views.services_modify, name= 'services-modify'),
     # TESTIMONIALS

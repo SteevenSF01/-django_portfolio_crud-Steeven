@@ -19,3 +19,18 @@ def skills_modify(request,id):
         form.save()
         return redirect('/settings/skills-settings/')
     return render(request, 'skills_modify.html', {'form': form , 'skill':skill})
+
+def delete_skill(request, id):
+    testimonial = Skill.objects.get(id=id)
+    testimonial.delete()
+    return redirect('/settings/skills-settings/')
+
+def create_skill(request):
+    if request.method == 'POST':
+        form = SkillForm(request.POST, request.FILES)
+        if form.is_valid():
+            form.save()
+            return redirect('/settings/skills-settings/')
+    else:
+        form = SkillForm() 
+    return render(request, 'skill_create.html',{'form':form})

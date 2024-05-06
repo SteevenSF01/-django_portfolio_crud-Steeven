@@ -20,9 +20,9 @@
               {% for x in portfolio %}
               <div class="col-lg-4 col-md-6 portfolio-item filter-{{x.category}}">
                 <div class="portfolio-wrap">
-                  <img src="{% static x.image %}" class="img-fluid" alt="">
+                  <img src="{{x.image.url}}" class="img-fluid" alt="">
                   <div class="portfolio-links">
-                    <a href="{% static x.image %}" data-gallery="portfolioGallery" class="portfolio-lightbox" title="{{x.title}}"><i class="bx bx-plus"></i></a>
+                    <a href="{{x.image.url}}" data-gallery="portfolioGallery" class="portfolio-lightbox" title="{{x.title}}"><i class="bx bx-plus"></i></a>
                     <a href="{% url "details_portfolio" x.id %}" title="More Details"><i class="bx bx-link"></i></a>
                   </div>
                 </div>
