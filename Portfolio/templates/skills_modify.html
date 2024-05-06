@@ -1,11 +1,15 @@
 {% extends "settings.html" %}
+{% load static %} 
+
 {% block secondary_content %}
-<form method="post">
-    {% csrf_token %}
-    {{ formset.management_form }}
-    {% for form in formset %}
-        {{ form }}
-    {% endfor %}
-    <button type="submit">Guardar cambios</button>
-</form>  
+<body>
+  <div class="container">
+    <h1>Modify skill</h1>
+    <form method="POST" class="border border-secondary p-4 rounded" style="background-color: #f8f9fa;">
+      {% csrf_token %}
+      {{ form }}
+      <button type="submit" class="btn btn-primary m-3">Modify</button>
+    </form>
+  </div>
+</body>
 {% endblock secondary_content %}

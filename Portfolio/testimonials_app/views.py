@@ -9,11 +9,11 @@ def testimonial_settings(request):
 
 def testimonial_modify(request,id):
     testimonial = Testimonial.objects.get(id=id)
-    form = TestimonialForm(request.POST or None, instance=testimonial)
+    form = TestimonialForm(request.POST or None,request.FILES, instance=testimonial)
     if form.is_valid():
         form.save()
         return redirect('testimonial_settings')
-    return render(request, 'testimonial_modify.html', {'form': form})
+    return render(request, 'testimonial_modify.html', {'form': form, 'testimonial': testimonial})
 
 def delete_testimonial(request, id):
     testimonial = Testimonial.objects.get(id=id)
@@ -22,7 +22,7 @@ def delete_testimonial(request, id):
 
 def create_testimonial(request):
     if request.method == 'POST':
-        form = TestimonialForm(request.POST)
+        form = TestimonialForm(request.POST, request.FILES)
         if form.is_valid():
             form.save()
             return redirect('/settings/testimonials_settings/')

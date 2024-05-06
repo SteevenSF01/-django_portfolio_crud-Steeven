@@ -42,7 +42,8 @@ urlpatterns = [
     path('settings/modify_hero/<int:id>', hero_views.modify_hero, name='modify-hero'),
     path('settings/about-modify/<int:id>', about_views.about_modify, name='modify_about'),
     # SKILLS
-    path('settings/skills-modify/', skills_views.skills_modify, name='skills-modify'),
+    path('settings/skills-settings/', skills_views.skills_settings, name='skills-settings'),
+    path('settings/skills-settings/modify/<int:id>', skills_views.skills_modify, name='skills-modify'),
     # SERVICES
     path('settings/services-modify/', services_views.services_modify, name= 'services-modify'),
     # TESTIMONIALS

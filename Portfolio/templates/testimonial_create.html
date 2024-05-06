@@ -2,13 +2,13 @@
 {% block secondary_content %}
 <h2>Add a new member</h2>
 
-<form method="POST">
+<form method="POST" enctype="multipart/form-data">
 
     {% csrf_token %}
 
     {{ form.as_p}}
 
-    <button type="submit">Add Member</button>
+    <button type="submit">Add Testimonial</button>
 
 </form>
 {% endblock secondary_content %}
