@@ -3,7 +3,9 @@
 <header id="header">
     <div class="d-flex flex-column">
         <div class="profile">
-            <img src="{% static "/img/profile-img.jpg" %}" alt="" class="img-fluid rounded-circle">
+            {% for x in about %}
+            <img src="{{x.image.url}}" alt="" class="img-fluid rounded-circle">
+            {% endfor %}
             {% for x in hero %}
             <h1 class="text-light"><a href="index.html">{{x.name}}</a></h1>
             {% endfor %}

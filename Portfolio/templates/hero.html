@@ -1,10 +1,12 @@
 {% load static %}
-  <!-- ======= Hero Section ======= -->
-  <section id="hero" class="d-flex flex-column justify-content-center align-items-center">
-    <div class="hero-container" data-aos="fade-in">
-      {% for x in hero %}
-      <h1>{{x.name}}</h1>
-      <p>I'm <span class="typed" data-typed-items="{{x.title}} "></span></p>
-      {% endfor %}
-    </div>
-  </section><!-- End Hero -->
+<!-- ======= Hero Section ======= -->
+{% for x in about %}
+<section id="hero" class="d-flex flex-column justify-content-center align-items-center" style='background-image: url("{{ x.image.url }}"); background-position: top center;'>
+  {% endfor %}
+  {% for x in hero %}
+  <div class="hero-container" data-aos="fade-in">
+    <h1>{{x.name}}</h1>
+    <p>I'm <span class="typed" data-typed-items="{{x.title}} "></span></p>
+  </div>
+  {% endfor %}
+</section><!-- End Hero -->

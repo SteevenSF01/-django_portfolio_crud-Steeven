@@ -7,13 +7,13 @@ from about_app.models import Profile
 
 # Create your views here.
 def modify_hero(request, id):
-    hero = HeroModel.objects.get(id=id)
-    heroAll = HeroModel.objects.all()
+    hero = HeroModel.objects.all()
+    hero2 = HeroModel.objects.get(id=id)
     about = Profile.objects.all()
-    # hero = HeroModel.objects.all()
+    heroAll = HeroModel.objects.all()
 
-    form = HeroForm(request.POST or None, instance=hero)
+    form = HeroForm(request.POST or None, instance=hero2)
     if form.is_valid():
         form.save()
         return redirect('/settings/modify_hero/1')
-    return render(request, 'modify_hero.html', {'form':form, 'heroall':heroAll, 'about':about})
+    return render(request, 'modify_hero.html', {'form':form, 'hero':hero,'heroAll':heroAll, 'about':about})
