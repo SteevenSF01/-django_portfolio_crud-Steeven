@@ -4,9 +4,9 @@ from django.db import models
 
 class PortfolioItem(models.Model):
     choix_categorie = (
-        ('App', 'App'),
-        ('Card', 'Card'),
-        ('Web', 'Web'),
+        ('app', 'app'),
+        ('card', 'card'),
+        ('web', 'web'),
     )
 
     title = models.CharField(max_length=100)
