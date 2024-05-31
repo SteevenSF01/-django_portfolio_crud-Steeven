@@ -6,8 +6,8 @@
 
 <body>
   <div class="container">
-    <h1>Modify portfolio</h1>
-    <form method="POST" class="border border-secondary p-4 rounded" style="background-color: #f8f9fa;" enctype="multipart/form-data">
+    <h1>Modify about</h1>
+    <form method="POST" class="border d-flex flex-column gap-2 border-secondary p-4 rounded" style="background-color: #f8f9fa;" enctype="multipart/form-data">
       {% csrf_token %}
       {{ form }}
       <button type="submit" class="btn btn-primary m-3">Modify</button>
